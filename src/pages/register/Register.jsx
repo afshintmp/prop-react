@@ -1,6 +1,6 @@
-import React, {useRef, useState} from "react";
-import {MoonLoader, ScaleLoader} from "react-spinners";
-
+import React, {useEffect, useRef, useState} from "react";
+import {ScaleLoader} from "react-spinners";
+import axios from "axios";
 
 
 export default function Register() {
@@ -14,6 +14,7 @@ export default function Register() {
     const [rePasswordError, setRePasswordError] = useState('')
     const [isValid, setIsValid] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [Reqeust , setRequst] =useState(false)
     const isValidRef = useRef(isValid)
 
     function validate() {
@@ -79,10 +80,20 @@ export default function Register() {
         validate()
 
         if (isValidRef.current) {
-            console.log('start')
             setLoading(true)
+            setRequst(true)
         }
     }
+    useEffect(()=>{
+        if (username){
+            axios.post('http://127.0.0.1:8000/api/register').then((response) => {
+                console.log(response.data)
+            });
+
+        }
+    },[Reqeust])
+
+
 
     function handleChange(e) {
         const field = e.target.id
@@ -110,12 +121,11 @@ export default function Register() {
         }
     }
 
-
     return <div className="register-box">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-12 col-lg-6 text-center">
-                    {loading && <ScaleLoader color="#7352C7FF" />}
+                    {loading && <ScaleLoader color="#7352C7FF"/>}
                     {!loading && <div className="register-form">
                         <div className="input-group mb-2">
                             <label htmlFor="username" className={usernameError && 'label-error'}>نام کاربری</label>
