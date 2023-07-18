@@ -1,0 +1,16 @@
+.error-text{
+    color: #ec3636 !important;
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.label-error{
+    color: #ec3636 !important;
+}
+.input-error{
+    color: #ec3636 !important;
+}
+input{
+    text-align: left;
+    direction: ltr;
+}

@@ -1,4 +1,15 @@
 @import "./fonts/font.css";
+
+.btn-violet {
+  background: rgb(115, 82, 199)!important;
+  color: #fff!important;
+}
+
+.btn-violet:hover {
+  background: rgb(62, 44, 107)!important;
+  color: #fff!important;
+}
+
 #main-menu {
   position: fixed;
   width: 100%;
@@ -422,6 +433,35 @@
 .plans .table-inner td {
   font-weight: 400;
   font-size: 16px;
+}
+
+.register-box {
+  background: #1e1e1e;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.register-box .register-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 30px;
+}
+.register-box .register-form label {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+}
+.register-box .register-form input {
+  display: block;
+  width: 100%;
+  border-radius: 5px !important;
+  margin-top: 10px;
+}
+.register-box .register-form button {
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 600px) {
