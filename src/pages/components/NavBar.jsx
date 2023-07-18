@@ -1,9 +1,9 @@
 import React from "react";
-
+import logo from "../../image/ftmo_logo.svg"
 export default function NavBar(){
     return <div id="main-menu" className="">
         <div className="logo">
-            <img src="image/ftmo_logo.svg" alt="" />
+            <img src={logo} alt="" />
         </div>
         <div className="menu-list d-none d-md-block">
             <ul>

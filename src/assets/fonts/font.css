@@ -1,0 +1,77 @@
+@font-face{
+    font-family: "pelak";
+    src: url('Pelak-Medium.woff2') format('WOFF2'),
+    url('Pelak-Medium.woff') format('WOFF'),
+    url('Pelak-Medium.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: "pelak-bold";
+    src: url('Pelak-Bold.woff2') format('WOFF2'),
+    url('Pelak-Bold.woff') format('WOFF'),
+    url('Pelak-Bold.eot') format('eot');
+    font-weight: 700;
+
+}
+
+@font-face{
+    font-family: "pelak-ebold";
+    src: url('Pelak-ExtraBold.woff2') format('WOFF2'),
+    url('Pelak-ExtraBold.woff') format('WOFF'),
+    url('Pelak-ExtraBold.eot') format('eot');
+    font-weight: 900;
+
+}
+
+@font-face{
+    font-family: "pelak-light";
+    src: url('Pelak-light.woff2') format('WOFF2'),
+    url('Pelak-light.woff') format('WOFF'),
+    url('Pelak-light.eot') format('eot');
+    font-weight: 400;
+
+}
+
+.trading-firm .trading-firm-info h3{
+    font-family: "pelak-ebold" !important;
+    font-weight: 900;
+}
+.join-us-footer h3,
+.evaluation-process .evaluation-process-title{
+    font-family: "pelak-ebold" !important;
+    font-weight: 900;
+}
+.info-cart .info-cart-cart h3,
+.evaluation-process .evaluation-process-cart .evaluation-process-cart-title,
+.evaluation-process .evaluation-process-cart .evaluation-process-cart-num,
+.evaluation-process .evaluation-process-small-cart .evaluation-process-cart-title,
+.evaluation-process .evaluation-process-small-cart .evaluation-process-cart-num{
+    font-family: "pelak-bold" !important;
+    font-weight: 600;
+}
+.info-cart .info-cart-cart p,
+.payout-system p,
+.trading-firm .trading-firm-info p,
+.evaluation-process .evaluation-process-cart-info{
+    font-family: "pelak-light" !important;
+    font-weight: 400;
+}
+.payout-system h3,
+.join-the-team .join-the-team-section h4{
+    font-family: "pelak-ebold" !important;
+    font-weight: 900;
+}
+.btn-blue,
+.btn-gray,
+.join-the-team .join-the-team-section p{
+    font-family: 'pelak';
+    font-weight: 500;
+}
+
+*{
+    font-family: 'pelak';
+    font-weight: 500;
+}
