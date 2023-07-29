@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/prop-react.iml" filepath="$PROJECT_DIR$/.idea/prop-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../prop-laravel/props-laravel/.idea/props-laravel.iml" filepath="$PROJECT_DIR$/../../prop-laravel/props-laravel/.idea/props-laravel.iml" />
     </modules>
   </component>
 </project>

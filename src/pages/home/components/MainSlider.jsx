@@ -20,7 +20,7 @@ export default function MainSlider(){
                         <div>
                             <div className="mt-50">
                                 <button className="btn-transparent">چالش ftmo</button>
-                                <button className="btn-blue">امتحان رایگان</button>
+                                <button className="btn-violet main-slider-btn">امتحان رایگان</button>
                             </div>
                         </div>
                     </div>

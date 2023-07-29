@@ -1,7 +1,8 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {ScaleLoader} from "react-spinners";
 import axios from "axios";
-
+import {useNavigate} from "react-router-dom";
+import AuthContext from "../components/auth-context";
 
 export default function Register() {
     const [username, setUsername] = useState('')
@@ -14,8 +15,11 @@ export default function Register() {
     const [rePasswordError, setRePasswordError] = useState('')
     const [isValid, setIsValid] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [Reqeust , setRequst] =useState(false)
+    const [request, setRequest] = useState(false)
     const isValidRef = useRef(isValid)
+    const userContext = useContext(AuthContext)
+    const [user, setUser] = useState(userContext)
+    const navigate = useNavigate();
 
     function validate() {
         isValidRef.current = true
@@ -81,18 +85,43 @@ export default function Register() {
 
         if (isValidRef.current) {
             setLoading(true)
-            setRequst(true)
+            setRequest(true)
         }
     }
-    useEffect(()=>{
-        if (username){
-            axios.post('http://127.0.0.1:8000/api/register').then((response) => {
-                console.log(response.data)
+
+
+    function loggedInUser(data) {
+        if (data.error === false) {
+            setUser(data.user)
+            // navigate('/dashboard')
+
+        }
+    }
+
+    useEffect(() => {
+
+        console.log(userContext)
+
+        if (username) {
+            axios.post('http://127.0.0.1:8000/api/register', {
+                'username': username,
+                'email': email,
+                'password': password
+            }, {
+                headers: {
+
+                    'content-type': 'text/json'
+                }
+            }).then((response) => {
+                // navigate('/admin');
+
+                loggedInUser(response.data)
+            }).catch(error => {
+                console.log(error)
             });
 
         }
-    },[Reqeust])
-
+    }, [request])
 
 
     function handleChange(e) {
@@ -121,65 +150,68 @@ export default function Register() {
         }
     }
 
-    return <div className="register-box">
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-12 col-lg-6 text-center">
-                    {loading && <ScaleLoader color="#7352C7FF"/>}
-                    {!loading && <div className="register-form">
-                        <div className="input-group mb-2">
-                            <label htmlFor="username" className={usernameError && 'label-error'}>نام کاربری</label>
-                            <input onChange={(e) => handleChange(e)}
-                                   value={username}
-                                   type="text"
-                                   id="username"
-                                   className={usernameError ? 'form-control input-error' : 'form-control'}/>
-                            {usernameError && <span className="error-text">{usernameError}</span>}
-                        </div>
-                        <div className="input-group mb-2">
-                            <label htmlFor="email" className={emailError && 'label-error'}>ایمیل</label>
-                            <input
-                                type="text"
-                                id="email"
-                                onChange={(e) => handleChange(e)}
-                                value={email}
-                                className={emailError ? 'form-control input-error' : 'form-control'}/>
+    return <>
+        <AuthContext.Provider value={user}></AuthContext.Provider>
+        <div className="register-box">
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-12 col-lg-6 text-center">
+                        {loading && <ScaleLoader color="#7352C7FF"/>}
+                        {!loading && <div className="register-form">
+                            <div className="input-group mb-2">
+                                <label htmlFor="username" className={usernameError && 'label-error'}>نام کاربری</label>
+                                <input onChange={(e) => handleChange(e)}
+                                       value={username}
+                                       type="text"
+                                       id="username"
+                                       className={usernameError ? 'form-control input-error' : 'form-control'}/>
+                                {usernameError && <span className="error-text">{usernameError}</span>}
+                            </div>
+                            <div className="input-group mb-2">
+                                <label htmlFor="email" className={emailError && 'label-error'}>ایمیل</label>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    onChange={(e) => handleChange(e)}
+                                    value={email}
+                                    className={emailError ? 'form-control input-error' : 'form-control'}/>
 
-                            {emailError && <span className="error-text">{emailError}</span>}
-                        </div>
-                        <div className="input-group mb-2">
-                            <label htmlFor="password" className={passwordError && 'label-error'}>پسورد</label>
-                            <input
-                                onChange={(e) => handleChange(e)}
-                                value={password}
-                                type="text"
-                                id="password"
-                                className={passwordError ? 'form-control input-error' : 'form-control'}/>
+                                {emailError && <span className="error-text">{emailError}</span>}
+                            </div>
+                            <div className="input-group mb-2">
+                                <label htmlFor="password" className={passwordError && 'label-error'}>پسورد</label>
+                                <input
+                                    onChange={(e) => handleChange(e)}
+                                    value={password}
+                                    type="text"
+                                    id="password"
+                                    className={passwordError ? 'form-control input-error' : 'form-control'}/>
 
-                            {passwordError && <span className="error-text">{passwordError}</span>}
-                        </div>
-                        <div className="input-group mb-2">
-                            <label htmlFor="re-password" className={rePasswordError && 'label-error'}>تکرار
-                                پسورد</label>
-                            <input
-                                onChange={(e) => handleChange(e)}
-                                value={rePassword}
-                                type="text"
-                                id="re-password"
-                                className={rePasswordError ? 'form-control input-error' : 'form-control'}/>
-                            {rePasswordError && <span className="error-text">{rePasswordError}</span>}
-                        </div>
-                        <div>
-                            <button onClick={register} className="btn btn-violet">
-                                ثبت نام
-                            </button>
-                        </div>
-                    </div>}
+                                {passwordError && <span className="error-text">{passwordError}</span>}
+                            </div>
+                            <div className="input-group mb-2">
+                                <label htmlFor="re-password" className={rePasswordError && 'label-error'}>تکرار
+                                    پسورد</label>
+                                <input
+                                    onChange={(e) => handleChange(e)}
+                                    value={rePassword}
+                                    type="text"
+                                    id="re-password"
+                                    className={rePasswordError ? 'form-control input-error' : 'form-control'}/>
+                                {rePasswordError && <span className="error-text">{rePasswordError}</span>}
+                            </div>
+                            <div>
+                                <button onClick={register} className="btn btn-violet">
+                                    ثبت نام
+                                </button>
+                            </div>
+                        </div>}
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </>
 
 
 }

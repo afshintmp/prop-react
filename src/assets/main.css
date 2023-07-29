@@ -1,13 +1,128 @@
 @import "./fonts/font.css";
-
 .btn-violet {
-  background: rgb(115, 82, 199)!important;
-  color: #fff!important;
+  background: rgb(115, 82, 199) !important;
+  color: #fff !important;
 }
 
 .btn-violet:hover {
-  background: rgb(62, 44, 107)!important;
-  color: #fff!important;
+  background: rgb(62, 44, 107);
+  color: #fff;
+}
+
+.btn-outline-violet {
+  border: 1px solid rgb(115, 82, 199) !important;
+  color: rgb(115, 82, 199) !important;
+  background: transparent !important;
+}
+
+.main-btn {
+  background: #00c7b4;
+  color: #ffffff;
+  margin-bottom: 40px;
+  border: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: help;
+  padding: 18px;
+  max-height: 50px;
+}
+
+.main-slider-btn,
+.btn-blue {
+  width: auto;
+  min-width: 150px;
+  margin: 10px;
+  color: #ffffff;
+  background: #0781fe;
+  min-height: 50px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.btn-gray {
+  color: #262729 !important;
+  background-color: #eaeaea;
+  border: 0;
+  width: auto;
+  min-width: 150px;
+  margin: 10px;
+  min-height: 50px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.btn-violet {
+  background: rgb(115, 82, 199) !important;
+  color: #fff !important;
+}
+
+.btn-violet:hover {
+  background: rgb(62, 44, 107);
+  color: #fff;
+}
+
+.btn-outline-violet {
+  border: 1px solid rgb(115, 82, 199) !important;
+  color: rgb(115, 82, 199) !important;
+  background: transparent !important;
+}
+
+.main-btn {
+  background: #00c7b4;
+  color: #ffffff;
+  margin-bottom: 40px;
+  border: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: help;
+  padding: 18px;
+  max-height: 50px;
+}
+
+.main-slider-btn,
+.btn-blue {
+  width: auto;
+  min-width: 150px;
+  margin: 10px;
+  color: #ffffff;
+  background: #0781fe;
+  min-height: 50px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.btn-gray {
+  color: #262729 !important;
+  background-color: #eaeaea;
+  border: 0;
+  width: auto;
+  min-width: 150px;
+  margin: 10px;
+  min-height: 50px;
+  font-weight: 500;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #main-menu {
@@ -19,7 +134,7 @@
   padding-right: 15px;
   height: 75px;
   padding-top: 0;
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
   border: none;
   display: flex;
   z-index: 10;
@@ -52,7 +167,17 @@
   display: block;
 }
 #main-menu .menu-list ul li:hover a {
-  color: #0781fe;
+  color: rgb(115, 82, 199);
+}
+#main-menu .authenticate-btn {
+  font-size: 14px;
+  padding-top: 20px;
+}
+#main-menu .authenticate-btn button {
+  font-size: 14px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: 15px;
 }
 
 .main-slider {
@@ -189,24 +314,6 @@
   letter-spacing: 0.7px;
 }
 
-.main-btn {
-  background: #00c7b4;
-  color: #ffffff;
-  margin-bottom: 40px;
-  border: 0;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: help;
-  padding: 18px;
-  max-height: 50px;
-}
-
 .join-the-team {
   padding-top: 75px;
   padding-bottom: 75px;
@@ -245,34 +352,6 @@
   font-style: normal;
   text-transform: none;
   line-height: normal;
-}
-
-.btn-blue {
-  width: auto;
-  min-width: 150px;
-  margin: 10px;
-  color: #ffffff;
-  background: #0781fe;
-  min-height: 50px;
-  font-weight: 500;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  border: 0;
-}
-
-.btn-gray {
-  color: #262729 !important;
-  background-color: #eaeaea;
-  border: 0;
-  width: auto;
-  min-width: 150px;
-  margin: 10px;
-  min-height: 50px;
-  font-weight: 500;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
 }
 
 .payout-system {
@@ -435,35 +514,6 @@
   font-size: 16px;
 }
 
-.register-box {
-  background: #1e1e1e;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-.register-box .register-form {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px 30px;
-}
-.register-box .register-form label {
-  color: #fff;
-  font-size: 14px;
-  display: block;
-}
-.register-box .register-form input {
-  display: block;
-  width: 100%;
-  border-radius: 5px !important;
-  margin-top: 10px;
-}
-.register-box .register-form button {
-  margin-top: 15px;
-  border-radius: 5px;
-  width: 100%;
-  font-size: 14px;
-}
-
 @media only screen and (max-width: 600px) {
   #main-menu {
     position: relative;
@@ -609,6 +659,87 @@
   .info-cart .info-cart-cart h3 {
     font-size: 20px;
   }
+}
+.register-box {
+  background: rgb(30, 30, 30);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.register-box .register-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 30px;
+}
+.register-box .register-form label {
+  color: #fff;
+  font-size: 14px;
+  display: block;
+}
+.register-box .register-form input {
+  display: block;
+  width: 100%;
+  border-radius: 5px !important;
+  margin-top: 10px;
+}
+.register-box .register-form button {
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.admin-panel {
+  background: rgb(30, 30, 30);
+  height: 100vh;
+  padding-top: 80px;
+}
+.admin-panel .admin-menu ul {
+  border: 1px solid rgb(115, 82, 199);
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-panel .admin-menu ul li {
+  overflow: hidden;
+  border-bottom: 1px solid rgb(115, 82, 199);
+  color: #eeeeee;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.admin-panel .admin-menu ul li:hover {
+  background: #000000;
+  color: rgb(115, 82, 199) !important;
+}
+.admin-panel .main-content {
+  color: #ffffff;
+}
+.admin-panel .main-content label {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.admin-panel .main-content input {
+  background: transparent;
+  border: 1px solid rgb(115, 82, 199);
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 10px;
+}
+.admin-panel .main-content textarea:focus,
+.admin-panel .main-content input:focus {
+  outline: none;
+}
+.admin-panel .main-content textarea {
+  background: transparent;
+  border: 1px solid rgb(115, 82, 199);
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 10px;
+  resize: none;
+  width: 100%;
+  height: 150px;
 }
 
 /*# sourceMappingURL=main.css.map */

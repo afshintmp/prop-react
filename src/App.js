@@ -4,6 +4,7 @@ import Login from "./pages/login/login";
 import NavBar from "./pages/components/NavBar";
 import Footer from "./pages/components/Footer";
 import Register from './pages/register/Register';
+import Admin from "./pages/admin/Admin";
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/admin" element={<Admin />} />
             </Routes>
             <Footer />
         </>
